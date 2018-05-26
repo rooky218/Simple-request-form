@@ -1,0 +1,116 @@
+body {
+  background-color: #d3d3d3;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.info-box {
+  width: 330px;
+  min-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  background-color: #ffffff;
+  padding: 25px;
+}
+
+.info-box h3 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 9pt;
+  margin: 0;
+  font-weight: bold;
+}
+
+.inline-left {
+  display: inline-block;
+  float: left;
+  text-align: left;
+}
+
+.inline-right {
+  display: inline;
+  float: right;;
+  text-align: right;
+  color: #1d62f6
+}
+
+.side-by-side {
+  display: inline-block;
+  width: 48%;
+}
+
+#fm-dt, #fm-ds {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 9pt;
+  color: #848484;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  background-color: #ffffff;
+
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+#fm-e, #fm-a {
+  width: 95%;
+  height: 30px;
+  border-radius: 0px;
+  padding-left: 10px;
+  font-size: 11pt;
+}
+
+#fm-fn, #fm-ln {
+  width: 90%;
+  height: 30px;
+  border-radius: 0px;
+  margin-top: 5px;
+  padding-left: 10px;
+  font-size: 11pt;
+}
+
+#fm-t {
+  width: 44%;
+  height: 30px;
+  border-radius: 0px;
+  padding-left: 10px;
+  font-size: 11pt;
+}
+
+#bt-1 {
+  width: 100%;
+  height: 56px;
+  font-size: 11pt;
+  border: none;
+  color: white;
+  background-color: #1d62f6;
+}
+
+#bt-2 {
+  width: 100%;
+  height: 56px;
+  font-size: 11pt;
+  border: none;
+  color: white;
+  background-color: #4EA24E;
+  margin-top: 15px;
+}
+
+.fine-print {
+  color: #b5b5b5;
+  font-size: 7pt;
+  margin-bottom: 40px;
+}
+
+.linked {
+  color: #1d62f6;
+}
