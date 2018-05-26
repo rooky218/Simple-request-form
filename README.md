@@ -1,5 +1,5 @@
 # Simple-request-form
-View this form online: https://jsfiddle.net/rooky218/gpvcq9x2/
+View this form online: <a href="https://jsfiddle.net/rooky218/gpvcq9x2/" target="_blank">View this form online</a>
 
 This form is a simple request with a Select Dropdown menu generated dynamically with javascript
 
