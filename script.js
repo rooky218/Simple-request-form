@@ -1,16 +1,16 @@
 console.log("Script loaded, v1.3");
 
 //all checks must equal 1 to submit form
-typeCheck = 0;
-otherCheck = 0;
-nameCheck = 0;
+firstNameCheck = 0;
+lastNameCheck = 0;
 emailCheck = 0;
 phoneCheck = 0;
 addressCheck = 0;
 cannotSubmitYet = 0;
 
 function checkForGreen(){
-  if(nameCheck == 1 &&
+  if(firstNameCheck == 1 &&
+    lastNameCheck == 1 &&
     emailCheck == 1 &&
     phoneCheck == 1 &&
     addressCheck == 1){ //if all values are set
@@ -147,7 +147,7 @@ function validate() {
 
 
 //used to check data input
-function checkInputNames(e){
+function checkFirstName(e){
   console.log("checkInput called");
 
   //set trigger id
@@ -166,10 +166,41 @@ function checkInputNames(e){
   if(results == false){
     //false == letters
     document.getElementById(myId).style.borderColor = "green";
-    nameCheck = 1;
+    firstNameCheck = 1;
   } else {
     document.getElementById(myId).style.borderColor = "red";
-    nameCheck = 0;
+    firstNameCheck = 0;
+  }
+  console.log("Test is: ", results);
+
+  //update greenlight
+  checkForGreen()
+}
+
+//used to check data input
+function checkLastName(e){
+  console.log("checkInput called");
+
+  //set trigger id
+  myId = e.currentTarget.id;
+
+  //xin is the form that is being checked
+  userInput = document.getElementById(myId).value; //user input
+
+  //check for non letters
+  pattern = /[^A-Za-z]/;
+
+  //run check
+  results = pattern.test(userInput);
+
+  //update UI
+  if(results == false){
+    //false == letters
+    document.getElementById(myId).style.borderColor = "green";
+    lastNameCheck = 1;
+  } else {
+    document.getElementById(myId).style.borderColor = "red";
+    lastNameCheck = 0;
   }
   console.log("Test is: ", results);
 
