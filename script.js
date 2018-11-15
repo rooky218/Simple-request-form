@@ -18,6 +18,7 @@ function checkForGreen(){
         console.log("you are cleared for takeoff");
     } else {
       //debuggin
+      cannotSubmitYet = 0;
       console.log("cannot submit yet");
     }
 }
@@ -163,7 +164,7 @@ function checkFirstName(e){
   results = pattern.test(userInput);
 
   //update UI
-  if(results == false){
+  if(results == false && userInput != ""){
     //false == letters
     document.getElementById(myId).style.borderColor = "green";
     firstNameCheck = 1;
@@ -194,7 +195,7 @@ function checkLastName(e){
   results = pattern.test(userInput);
 
   //update UI
-  if(results == false){
+  if(results == false && userInput != ""){
     //false == letters
     document.getElementById(myId).style.borderColor = "green";
     lastNameCheck = 1;
@@ -225,7 +226,7 @@ function checkEmail(e){
   console.log("Email test is: ", results);
 
   //update UI
-  if(results == true){
+  if(results == true && userInput != ""){
     document.getElementById(myId).style.borderColor = "green";
     emailCheck = 1;
   } else {
@@ -255,7 +256,7 @@ function checkPhone(e){
   console.log("Phone test is: ", results);
 
   //update UI
-  if(results == true){
+  if(results == true && userInput != ""){
     document.getElementById(myId).style.borderColor = "green";
     phoneCheck = 1;
   } else {
