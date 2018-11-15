@@ -3,6 +3,7 @@
 <head>
   <title>Request More Information</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" async></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:bold" rel="stylesheet">
 </head>
 <body>
@@ -31,28 +32,28 @@
 
     <div class="side-by-side">
         <p class="label">First Name*</p>
-      <input id="fm-fn" type="text" name="fname">
+      <input id="fm-fn" type="text" name="fname" oninput="checkInputNames(event)">
     </div>
 
     <div class="side-by-side">
         <p class="label">Last Name*</p>
-      <input id="fm-ln" type="text" name="lname">
+      <input id="fm-ln" type="text" name="lname" oninput="checkInputNames(event)">
     </div>
 
     <br/><br/>
 
       <p class="label">Email*</p>
-    <input id="fm-e" type="text" name="email">
+    <input id="fm-e" type="text" name="email" oninput="checkEmail(event)">
 
     <br/><br/>
 
       <p class="label">Telephone*</p>
-    <input id="fm-t" type="text" name="telephone">
+    <input id="fm-t" type="text" name="telephone" oninput="checkPhone(event)">
 
     <br/><br/>
 
       <p class="label inline-left">Address*</p><p class="label inline-right">Apt, P.O box, or don't see your address?</p>
-    <input id="fm-a" type="text" name="address" placeholder="Enter a location">
+    <input id="fm-a" type="text" name="address" placeholder="Enter a location" oninput="checkAddress(event)">
 
     <br/><br/>
 
@@ -75,124 +76,6 @@
   <input id="bt-2" type="button" onclick="alert('Thank you for your application!')" value="Apply Now">
 
 </div>
-
-<script>
-
-function updateList(e) {
-  //var selected = document.getElementById("fm-dt").value =
-  if(e.target.value == "Technology"){
-
-    //check for old children and remove if needed
-    removeAllChildren();
-
-    //create new child for each individual degree program per category
-    addNewChildren(e.target.value);
-
-  } else if(e.target.value == "Healthcare") {
-    //alert("Success " + e.target.value);
-
-    //check for old children and remove if needed
-    removeAllChildren();
-
-    //create new child for each individual degree program per category
-    addNewChildren(e.target.value);
-
-  } else if(e.target.value == "Education") {
-
-    //check for old children and remove if needed
-    removeAllChildren();
-
-    //create new child for each individual degree program per category
-    addNewChildren(e.target.value);
-  }
-}
-
-function removeAllChildren() {
-  //check for old children (if user selected a new option from first dropdown)
-  var howManyChildren = document.getElementById('fm-ds').length;
-  if(howManyChildren > 1){
-    //if too many children, delete all child nodes and create new ones
-    console.log("test");
-    for(var i = howManyChildren; i > 1; i--){
-      console.log("loop " + i);
-      var list = document.getElementById("fm-ds");
-      list.removeChild(list.childNodes[i]);
-    }
-    //remove last item from list - can't be done in for loop
-    //index is 2, leave index item 1 as the default list option
-    var howManyChildren = document.getElementById('fm-ds').length;
-    if(howManyChildren > 1){
-      var list = document.getElementById("fm-ds");
-      list.removeChild(list.childNodes[2]);
-    }
-  }
-}
-
-function addNewChildren(xin){
-    var z = document.createElement("option");
-    z.setAttribute("value", xin + "1");
-    var t = document.createTextNode(xin + " - 1");
-    z.appendChild(t);
-    document.getElementById("fm-ds").appendChild(z);
-
-    var z = document.createElement("option");
-    z.setAttribute("value", xin + "2");
-    var t = document.createTextNode(xin + " - 2");
-    z.appendChild(t);
-    document.getElementById("fm-ds").appendChild(z);
-
-    var z = document.createElement("option");
-    z.setAttribute("value", xin + "3");
-    var t = document.createTextNode(xin + " - 3");
-    z.appendChild(t);
-    document.getElementById("fm-ds").appendChild(z);
-  }
-
-function validate() {
-      console.log("Validation called");
-      var x = document.forms["LibertyForm"]["degree-type"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["degree"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["fname"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["lname"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["email"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["telephone"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["address"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-      var x = document.forms["LibertyForm"]["submit"].value;
-      if (x == "") {
-          alert("The entire form must be completed to submit");
-          return false;
-      }
-}
-
-</script>
 
 </body>
 </html>
